@@ -118,6 +118,7 @@ ov)
   (when (<= (length (window-list)) 2)
     (split-window-below -10))
   (elpy-shell-send-region-or-buffer t))
+(global-set-key [f5] 'run-python-script)
 (local-set-key (kbd "<f5>") 'run-python-script)
 
 (defun add-py-debug ()  
