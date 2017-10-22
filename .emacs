@@ -4,10 +4,10 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+;;(add-to-list 'package-archives
+;;             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
 (package-initialize)
-(elpy-enable)
+;;(elpy-enable)
 (require 'evil)
 (evil-mode 1)
 
@@ -117,7 +117,8 @@ ov)
   (interactive)
   (when (<= (length (window-list)) 2)
     (split-window-below -10))
-  (elpy-shell-send-region-or-buffer t))
+  (python-shell-send-buffer t)
+)
 (global-set-key [f5] 'run-python-script)
 (local-set-key (kbd "<f5>") 'run-python-script)
 
@@ -178,7 +179,7 @@ ov)
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pyenv-mode transpose-frame realgud-rdb2 neotree jedi-core evil elpy column-marker color-theme-solarized color-theme-modern auto-complete)))
+    (## pyenv-mode transpose-frame realgud-rdb2 neotree jedi-core evil elpy column-marker color-theme-solarized color-theme-modern auto-complete)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
